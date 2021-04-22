@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(180, 16, 202);
+    font-size: 20px;
+    text-align: center;
+}
+
+.title{
+    color:rgb(65, 207, 65);
+    font-size: 2em;
+    font-family: monospace;
+    font-weight: bold;
+
+}
+
+.subtitle{
+    color:rgb(225, 209, 65);
+    font-family: monospace;
+    line-height: 1.5;
+}
+
+ul{
+    color: rgb(225, 209, 65);
+    font-size: 25px;
+    font-family: monospace;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 2;
+}
