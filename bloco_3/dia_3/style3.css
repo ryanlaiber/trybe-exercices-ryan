@@ -1,0 +1,12 @@
+h1,p{
+    text-align: center;
+}
+.list{
+    list-style: none;
+}
+ol li:hover{
+    background-color: cornflowerblue;
+}
+ol li:active{
+    font-size: 15px;
+}
