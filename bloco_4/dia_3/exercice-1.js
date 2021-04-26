@@ -1,8 +1,10 @@
 let n = 5;
 let square = ""
-for (let higth = 1; higth <= n; higth += 1){
-    for (let width = 0; width <= n; width += 1){
-        square.push("*");
-    }
+
+for (let width = 0; width < n; width +=1){
+    square += "*";
+};
+
+for (let height = 0; height < n; height += 1){
     console.log(square);
-}
+};
