@@ -1,4 +1,4 @@
-let n = 13;
+let n = 5;
 let t = "*";
 let s = " ";
 let square = "";
