@@ -1,29 +1,32 @@
-let n = 5;
-let t = "*";
-let s = " ";
-let square = "";
 
-for (let l = 0; l < n; l += 1){
 
-    if (square.length == 0){
+let n = 51;
+let dot = "*";
+let space = " ";
 
-        for (let c = 0; c < n; c += 1){
-            square = square + t;
-        }
-        console.log(square); 
 
-    }else if (square.length > 0){
+for(let i = n; i > 0; i -= 1){
 
-        square = "";
-        let o = n - (2 * l) ;
-        let le = (n - l) - o;
-        for (let spaces = 0; spaces < le; spaces += 1){
-            square = square + s;
-        };
-        for (let dots = 0; dots < o; dots += 1){
-            square = square + t;
-        };
-        
-        console.log(square);
-        }
-    }
+    let square = "";
+    let line = n - i;
+    let spaceNumber = i;
+    let dotNumber = line - spaceNumber;
+
+    for(let iSpaces = 0; iSpaces < spaceNumber; iSpaces += 1){
+        square += space;
+    };
+
+    for(let iDots = 0; iDots < dotNumber; iDots += 1){
+        square += dot;
+    };
+
+    console.log(square);
+};
+
+let base = "";
+
+for(let counter = 0; counter < n; counter += 1){
+    base += dot;
+};
+
+console.log(base);
