@@ -1,6 +1,6 @@
-function maiorNumero(lista){
+function menorNumero(lista){
     if(typeof lista != "object"){
-        console.log("Não é lista");
+       return console.log("Não é lista");
     };
 
     let maior = lista[0];
@@ -14,4 +14,4 @@ function maiorNumero(lista){
     return console.log(maior);
 };
 
-maiorNumero([-1,-10,-3,-4]);
+menorNumero([1,2,3]);
