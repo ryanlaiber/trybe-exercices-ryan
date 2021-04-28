@@ -6,7 +6,7 @@ function maiorNumero(lista){
     let maior = lista[0];
 
     for(let number of lista){
-        if(number > maior){
+        if(number < maior){
             maior = number;
         };
     };
