@@ -1,7 +1,27 @@
 document.getElementsByTagName("p")[0].innerText = "Eu vou ser um ótimo dev";
 document.getElementsByClassName("main-content")[0].style.backgroundColor = "green";
-
-
+function backgroundColorChangeByClass(classToChange, colorChange){
+    document.getElementsByClassName(classToChange)[0].style.backgroundColor = colorChange;
+};
+backgroundColorChangeByClass("center-content", "white");
+function correctTextTitle(){
+    if (document.getElementsByClassName("title")[0].innerText != "Exercício 5.1 - JavaScript"){
+        document.getElementsByClassName("title")[0].innerText = "Exercício 5.1 - JavaScript";
+    };
+};
+correctTextTitle();
+function upperCaseTagText(tagToChange){
+    for(let text in document.getElementsByTagName(tagToChange)){
+        document.getElementsByTagName(tagToChange)[text].innerText = document.getElementsByTagName(tagToChange)[text].innerText.toUpperCase();
+    };
+};
+upperCaseTagText("p");
+function ShowTagContent(tagName){
+    for (let i in document.getElementsByTagName(tagName)){
+        console.log(document.getElementsByTagName(tagName)[i].innerHTML);
+    };
+};
+ShowTagContent("p");
 /*
     Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
     - document.getElementById()
