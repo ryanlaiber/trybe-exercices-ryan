@@ -46,3 +46,18 @@ for (let i = 0; i < 3; i += 1){
 };
 
 document.querySelector("h1").classList.add("title");
+
+let allH3 = document.getElementsByTagName("h3");
+
+for (let tag of allH3){
+    tag.classList.add("description");
+};
+
+document.querySelector(".main-content").removeChild(document.querySelector(".left-content"));
+
+document.querySelector(".right-content").style = "margin-right: auto";
+
+divRightContent.parentElement.style.backgroundColor = "green";
+
+ulList.removeChild(ulList.lastChild);
+ulList.removeChild(ulList.lastChild);
