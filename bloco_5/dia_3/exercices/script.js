@@ -22,10 +22,13 @@ function daysList (){
   for (let day of dezDaysList){//
     let dayLi = document.createElement("li");
     dayLi.classList.add("day");
-    if (day === 24 || day === 25 || day === 31){
+    if (day === 24 || day === 31){
       dayLi.classList.add("holiday");
-    }else if (day === 4 || day === 11 || day === 18 || day === 25){
+    }else if (day === 4 || day === 11 || day === 18 ){
       dayLi.classList.add("friday");
+    }else if (day === 25){
+      dayLi.classList.add("friday");
+      dayLi.classList.add("holiday");
     };
     dayLi.innerText = day;
     daysUl.appendChild(dayLi);
@@ -55,12 +58,100 @@ feriados.addEventListener("click", function (){
       holidays[day].style.backgroundColor = "yellow";
       feriadosButton = true;
     };
-  }else if (feriadosButton ===true){
+  }else{
     for (let day in holidays){
       holidays[day].style.backgroundColor = "rgb(238,238,238)";
       feriadosButton = false;
     };
   };
-
 });
 
+function sextaFeiraFunction(nome){
+  let sextaFeira = document.createElement("button");
+  sextaFeira.setAttribute("id", "btn-friday");
+  sextaFeira.innerText = nome;
+  document.querySelector(".buttons-container").appendChild(sextaFeira);
+};
+
+sextaFeiraFunction("Sexta-feira");
+
+let fridayBtn = document.getElementById("btn-friday");
+
+let fridayList = document.getElementsByClassName("friday");
+let fridayButton = false;
+let noFriday = [4, 11, 18, 25];
+
+fridayBtn.addEventListener("click", function (){
+  if (fridayButton === false){
+    for (let day in fridayList){
+      let d = fridayList[day]; 
+      d.innerText = "SEXTOU!!";
+      fridayButton = true;
+    }
+  }else{
+    for (let day in fridayList){
+      let d = fridayList[day];
+      d.innerText = noFriday[day];
+      fridayButton = false;
+    };
+  };
+});
+
+function size (event){
+  event.target.style.fontSize = "2em";
+};
+
+function defautSize (event){
+  event.target.style.fontSize = "20px";
+}
+
+let days = document.getElementsByClassName("day");
+
+function tarefas (tarefa){
+  let task = document.createElement("span");
+  task.innerText = tarefa;
+  document.querySelector(".my-tasks").appendChild(task);
+};
+
+tarefas("Estudar");
+
+function legenda (cor){
+  let legend = document.createElement("div");
+  legend.classList.add ("task");
+  legend.style.backgroundColor = cor;
+  document.querySelector(".my-tasks").appendChild(legend);
+};
+let txtcollor = "green";
+legenda(txtcollor);
+
+let task = document.querySelector(".task");
+
+let btnTask = false;
+
+function selectTask (event){
+  if (btnTask === false){
+    event.target.classList.add("selected");
+    btnTask = true;
+  }else{
+    event.target.classList.remove("selected");
+    btnTask = false;
+  };
+};
+
+task.addEventListener("click", selectTask);
+
+let selectedTask = document.querySelector(".selected");
+
+function taskColor(event){
+  if (event.target.style.color != txtcollor){
+    event.target.style.color = txtcollor;
+  }else{
+    event.target.style.color = "rgb(119,119,119)";
+  };
+};
+
+for (let i of days){
+  i.addEventListener("mouseover", size);
+  i.addEventListener("mouseout", defautSize);
+  i.addEventListener("click", taskColor);
+};
