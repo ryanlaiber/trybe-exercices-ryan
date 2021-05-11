@@ -12,7 +12,10 @@
     </header>
     
     <form action="" method="get">
-        <fieldset name="dadosPessoais">
+        <fieldset id="dadosPessoais">
+
+            <h2>Dados pessoais</h2>
+
             <label for="nomeCompleto">Nome completo:</label>
             <input type="text" name="nome-completo" maxlength="40" id="nomeCompleto" placeholder="Nome completo" required>
 
@@ -40,15 +43,34 @@
 
             <label for="estados">Estado:</label>
             <select name="estado" id="estados" required>
+            </select>
             
             <br>
-            
-            
+        
             <input type="radio" name="moradia" id="moradiaCasa" checked>Casa
             <input type="radio" name="moradia" id="moradiaAp">Apartamento
             
-                
-            </select>
+        </fieldset>
+
+        <fieldset id="dadosDoUltimoEmprego">
+
+            <h2>Dados do ultimo emprego</h2>
+
+            <textarea name="resumo" id="resumoCurriculo" cols="40" rows="10" maxlength="1000" placeholder="Descreva aqui o resumo do seu último emprego" required></textarea>
+
+            <br>
+
+            <label for="empregoCargo">Cargo:</label>
+            <input type="text" name="cargo" id="empregoCargo" required>
+
+            <br>
+
+            <textarea name="descricaoDoCargo" id="cargoDesc" cols="40" rows="10" maxlength="500" placeholder="Descreva seu cargo" required></textarea>
+
+            <br>
+
+            <label for="dataInicio">Data de início:</label>
+            <input type="datetime" name="data" id="dataInicio" required>
         </fieldset>
     </form>
     <script src="script.js"></script>
