@@ -1,6 +1,6 @@
 //  caminhos
 let caminhoEstadosInput = document.getElementById("estados");
-
+let caminhoNoDefBtn = document.getElementById("noDef");
 
 //  função adiciona option estados no id:estados
 let estadosBR = {
@@ -43,7 +43,10 @@ function adicionaEstados (objeto){
 };
 
 
-
+// adiciona eventlistener em noDef
+caminhoNoDefBtn.addEventListener("click", function (event){
+    event.preventDefault();
+});
 
 //  carrega as funções
 window.onload = function (){
