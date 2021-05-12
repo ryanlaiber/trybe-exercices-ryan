@@ -42,12 +42,6 @@ function adicionaEstados (objeto){
     };
 };
 
-
-// adiciona eventlistener em noDef
-caminhoNoDefBtn.addEventListener("click", function (event){
-    event.preventDefault();
-});
-
 // funções de bibliotecas 
 // pikaday adiciona imput de data
 let picker = new Pikaday({ field: document.getElementById('datepicker') });
@@ -55,4 +49,5 @@ let picker = new Pikaday({ field: document.getElementById('datepicker') });
 //  carrega as funções
 window.onload = function (){
     adicionaEstados(estadosBR);
+    validation.init();
 };
