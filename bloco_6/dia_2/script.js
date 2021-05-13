@@ -43,11 +43,9 @@ function adicionaEstados (objeto){
 };
 
 // funções de bibliotecas 
-// pikaday adiciona imput de data
-let picker = new Pikaday({ field: document.getElementById('datepicker') });
+
 
 //  carrega as funções
 window.onload = function (){
     adicionaEstados(estadosBR);
-    validation.init();
 };

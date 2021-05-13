@@ -5,93 +5,91 @@
     <title>Document</title>
     <!-- CSS bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <!-- pikaday style -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
-    <!-- style popup validate -->
-    <link href="node_modules/popup-validation/bin/validation.min.css" rel="stylesheet">
     <!-- style set local  -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Forms</h1>
+    <header class="container-md">
+        <h1 class="display-2">Forms</h1>
     </header>
     
     <form action="" method="get">
-        <fieldset id="dadosPessoais">
 
-            <h2>Dados pessoais</h2>
+        <div class="container-md">
+            <h2 class="display-5">Dados pessoais</h2>
 
             <label for="nomeCompleto">Nome completo:</label>
-            <input type="text" name="nome-completo" maxlength="40" id="nomeCompleto" placeholder="Nome completo" class= "validate" data-validate="required," required>
+            <input class="form-control" type="text" name="nome-completo" maxlength="40" id="nomeCompleto" placeholder="Nome completo" required>
 
-            <br>
+           
 
             <label for="email">E-mail:</label>
-            <input type="email" name="e-mail" id="email" maxlength="50" placeholder="E-mail" class= "validate" data-validate="required,email" required>
+            <input class="form-control" type="email" name="e-mail" id="email" maxlength="50" placeholder="E-mail"  required>
 
-            <br>
+            
 
             <label for="cpf">CPF:</label>
-            <input type="text" name="cpf" id="cpf" maxlength="11" placeholder="Ex: 15442311723" class= "validate" data-validate="required," required>
+            <input class="form-control" type="text" name="cpf" id="cpf" maxlength="11" placeholder="Ex: 15442311723"  required>
 
-            <br>
+            
 
             <label for="endereco">Endereço:</label>
-            <input type="text" name="endereco" id="endereco" maxlength="200" placeholder="Ex: Av. Araguaia, centro, nº 301" class= "validate" data-validate="required," required>
+            <input class="form-control" type="text" name="endereco" id="endereco" maxlength="200" placeholder="Ex: Av. Araguaia, centro, nº 301"  required>
 
-            <br>
+            
 
             <label for="cidade">Cidade:</label>
-            <input type="text" name="cidade" id="cidade" maxlength="28" placeholder="Ex: Vitória" class= "validate" data-validate="required," required>
+            <input class="form-control" type="text" name="cidade" id="cidade" maxlength="28" placeholder="Ex: Vitória"  required>
 
-            <br>
+            
 
             <label for="estados">Estado:</label>
             <select name="estado" id="estados" required>
             </select>
             
-            <br>
-        
-            <input type="radio" name="moradia" id="moradiaCasa" class= "validate" data-validate="required," >Casa
-            <input type="radio" name="moradia" id="moradiaAp">Apartamento
             
-        </fieldset>
+            <div class="form-check">
+                <input type="radio" name="moradia" id="moradiaCasa" class="form-check-input" data-validate="required," >
+                <label class="form-check-label" for="moradiaCasa">Casa</label>
+            </div>
 
-        <br>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="moradia" id="moradiaAp">
+                <label class="form-check-label" for="moradiaAp">Apartamento</label>
+            </div>
+
+        </div>
         
-        <fieldset id="dadosDoUltimoEmprego">
+       
+        <div class="container-md">
+            <h2 class="display-5">Dados do ultimo emprego</h2>
 
-            <h2>Dados do ultimo emprego</h2>
+            <textarea name="resumo" id="resumoCurriculo" cols="40" rows="10" maxlength="1000" placeholder="Descreva aqui o resumo do seu último emprego" class="form-control" required></textarea>
 
-            <textarea name="resumo" id="resumoCurriculo" cols="40" rows="10" maxlength="1000" placeholder="Descreva aqui o resumo do seu último emprego" required></textarea>
-
-            <br>
+        
 
             <label for="empregoCargo">Cargo:</label>
-            <input type="text" name="cargo" id="empregoCargo" required>
+            <input type="text" name="cargo" id="empregoCargo" class="form-control" placeholder="Nome do cargo" required>
 
-            <br>
+        
 
-            <textarea name="descricaoDoCargo" id="cargoDesc" cols="40" rows="10" maxlength="500" placeholder="Descreva seu cargo" required></textarea>
+            <textarea name="descricaoDoCargo" id="cargoDesc" cols="40" rows="10" maxlength="500" placeholder="Descreva seu cargo" class="form-control" required></textarea>
 
-            <br>
+        
 
             <label for="dataInicio">Data de início:</label>
-            <input type="text" name="data" id="datepicker" placeholder="dd/mm/aaaa" required>
+            <input type="text" name="data"  placeholder="dd/mm/aaaa" required>
+        </div>
+    
 
-        </fieldset>
-
-        <br>
+       
 
         <button type="submit">Enviar</button>
     </form>
-    <!-- script pikaday -->
-    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
-    <!-- script validation -->
-    <script src="node_modules/popup-validation/bin/validation.min.js"></script>
-    <!-- script local -->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <!-- Script local -->
     <script src="script.js"></script>
 </body>
 </html>
