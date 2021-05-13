@@ -43,7 +43,7 @@ function adicionaEstados (objeto){
 };
 
 // funções de bibliotecas 
-
+document.getElementById('datepicker').DatePickerX.init();
 
 //  carrega as funções
 window.onload = function (){
