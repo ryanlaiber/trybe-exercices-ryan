@@ -1,0 +1,2 @@
+const {hydrate} = require('./hydrate');
+
