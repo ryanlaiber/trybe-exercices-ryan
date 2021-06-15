@@ -14,7 +14,7 @@ describe('exercício 2 - getUserName', () => {
   test('usuário encontrado', () => {
     expect.assertions(1);
     return getUserName(4).then((user) =>{
-      expect(user).toEqual('Mark');
+      expect(user).toBe('Mark');
     });
   })
   test('usuário não encontrado', () => {
@@ -25,3 +25,16 @@ describe('exercício 2 - getUserName', () => {
   })
 })
 
+describe('exercício 3 - getUserName async/await', () => {
+  test('usuário encontrado async/await', async () => {
+    const name = await getUserName(4);
+    expect(name).toBe('Mark');
+  })
+  test('usuário não encontrado async/await', async () => {
+    try{
+     await getUserName(1); 
+    } catch(error) {
+      expect(error).toEqual({ error: 'User with 1 not found.' });
+    }
+  })
+})
