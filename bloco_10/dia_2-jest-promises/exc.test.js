@@ -1,5 +1,5 @@
 const { describe, test, expect } = require('@jest/globals');
-const { uppercase, getUserName } = require('./exc1');
+const { uppercase, getUserName, getRepos } = require('./exc1');
 
 describe('exercício 1 - toUppercase', () => {
   test('passa para uppercase', (done) => {
@@ -36,5 +36,15 @@ describe('exercício 3 - getUserName async/await', () => {
     } catch(error) {
       expect(error).toEqual({ error: 'User with 1 not found.' });
     }
+  })
+})
+
+const gitHubUrl = 'https://api.github.com/orgs/tryber/repos';
+
+describe('exercício 4 - getRepos', () => {
+  test('contem sd-01-week4-5-project-todo-list e sd-01-week4-5-project-meme-generator', async () => {
+    const namesList = await getRepos(gitHubUrl);
+    expect(namesList).toContain('sd-01-week4-5-project-todo-list');
+    expect(namesList).toContain('sd-01-week4-5-project-meme-generator');
   })
 })
