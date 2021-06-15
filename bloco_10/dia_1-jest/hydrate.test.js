@@ -1,5 +1,5 @@
 const {hydrate} = require('./hydrate');
-const {test, describe, expect, toThrow, toBe} = require('@jest/globals');
+const { test, describe, expect } = require('@jest/globals');
 
 describe('função hydrate:', () => {
     test('não é string', () => {
