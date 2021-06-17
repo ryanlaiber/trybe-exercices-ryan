@@ -23,11 +23,13 @@ describe('exercices - jest mock', () => {
     })
     
     test('exercício 3 - randomNumbers mock reset', () => {
-        exercices.randomNumber.mockImplementation((a, b, c) => a * b * c);
-        expect(exercices.randomNumber(1, 2, 3)).toBe(6);
-        expect(exercices.randomNumber).toHaveBeenCalledWith(1, 2, 3);
+        const excRn = jest.spyOn(exercices, 'randomNumber')
+            .mockImplementation((a, b, c) => a * b * c);
+        expect(excRn(1, 2, 3)).toBe(6);
+        console.log(excRn(1, 2, 3));
+        expect(excRn).toHaveBeenCalledWith(1, 2, 3);
         exercices.randomNumber.mockRestore();
-        expect(exercices.randomNumber()).toBe(50);
+        expect(excRn()).toBe(50);
     })
     
 })
