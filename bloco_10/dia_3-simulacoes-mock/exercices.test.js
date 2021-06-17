@@ -28,8 +28,8 @@ describe('exercices - jest mock', () => {
         expect(excRn(1, 2, 3)).toBe(6);
         console.log(excRn(1, 2, 3));
         expect(excRn).toHaveBeenCalledWith(1, 2, 3);
-        exercices.randomNumber.mockRestore();
-        expect(excRn()).toBe(50);
+        excRn.mockRestore();
+        expect(exercices.randomNumber()).toBe(50);
     })
     
 })
